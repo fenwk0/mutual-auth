@@ -8,9 +8,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-
+@RestController
 public class GreetingController {
 
+    @Value("${spring.application.name}")
+    private String applicationName;
+
+    @Value("${spring.server.port}")
+    private String serverPort;
+
+
+    private static final String template = "[%s][%s] Hello, %s!";
+    private final AtomicLong counter = new AtomicLong();
+
+    @RequestMapping("/greeting")
+    public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
+        return new Greeting(counter.incrementAndGet(),
+                String.format(template, applicationName, serverPort, name));
+    }
 
 
 }
