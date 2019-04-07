@@ -14,7 +14,7 @@ public class GreetingController {
     @Value("${spring.application.name}")
     private String applicationName;
 
-    @Value("${spring.server.port}")
+    @Value("${server.port}")
     private String serverPort;
 
 
