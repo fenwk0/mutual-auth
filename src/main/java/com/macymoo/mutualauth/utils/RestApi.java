@@ -10,6 +10,8 @@ import java.net.URL;
 
 public class RestApi {
 
+    private Object Greeting;
+
     public String invoke(String restUrl) {
 
         String retVal = "Failed";
@@ -41,16 +43,17 @@ public class RestApi {
 
         } catch (MalformedURLException e) {
 
-            e.printStackTrace();
+            retVal = retVal + e.getMessage() + " for " + restUrl;
 
         } catch (IOException e) {
 
-            e.printStackTrace();
+            retVal = retVal + e.getMessage() + " for " + restUrl + " [Check that the url returns a response in your browser]";
 
         }
 
         return retVal;
 
     }
+
 
 }
