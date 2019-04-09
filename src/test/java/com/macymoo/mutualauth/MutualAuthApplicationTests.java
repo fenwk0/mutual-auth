@@ -36,7 +36,7 @@ public class MutualAuthApplicationTests {
                     "{\"id\":1,\"content\":\"[greeting][0] Hello, World!\"}"));
 
         } catch (Exception e) {
-            fail(e.getMessage() + testUrl);
+            fail(e.getMessage() + testUrl + "\n" + e.getStackTrace());
         }
     }
 
