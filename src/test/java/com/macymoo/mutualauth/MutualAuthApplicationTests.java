@@ -42,13 +42,4 @@ public class MutualAuthApplicationTests {
         System.out.println("MutualAuthApplicationTests.testGreeting");
         System.out.println("retVal = " + retVal);
     }
-
-//    @Test
-//    public void sayHi() {
-//        RestTemplate restTemplate = new RestTemplate();
-//        Greeting retVal = restTemplate.getForObject(testUrl, Greeting.class);
-//        System.out.println("MutualAuthApplicationTests.sayHi");
-//        System.out.println("retVal = " + retVal);
-//    }
-
 }
