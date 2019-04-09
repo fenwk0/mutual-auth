@@ -10,6 +10,8 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
+import javax.validation.constraints.AssertTrue;
+
 import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
@@ -41,5 +43,7 @@ public class MutualAuthApplicationTests {
         String retVal = restApi.invoke(testUrl);
         System.out.println("MutualAuthApplicationTests.testGreeting");
         System.out.println("retVal = " + retVal);
+        assertTrue(retVal.contains("Success: [200]\n" +
+                "{\"id\":1,\"content\":\"[greeting][0] Hello, World!\"}"));
     }
 }
