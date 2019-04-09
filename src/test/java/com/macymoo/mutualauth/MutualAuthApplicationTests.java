@@ -20,13 +20,6 @@ public class MutualAuthApplicationTests {
 
     private RestApi restApi = new RestApi();
 
-    @Value("${spring.application.name}")
-    private String applicationName;
-
-    @Value("${spring.server.port}")
-    private String serverPort;
-
-
     @LocalServerPort
     private int port;
 
@@ -38,10 +31,9 @@ public class MutualAuthApplicationTests {
 
     @Test
     public void testGreeting() {
-
         String testUrl = "http://localhost:" + port + "/greeting";
+        System.out.println("MutualAuthApplicationTests.testGreeting: " + testUrl);
         String retVal = restApi.invoke(testUrl);
-        System.out.println("MutualAuthApplicationTests.testGreeting");
         System.out.println("retVal = " + retVal);
         assertTrue(retVal.contains("Success: [200]\n" +
                 "{\"id\":1,\"content\":\"[greeting][0] Hello, World!\"}"));
