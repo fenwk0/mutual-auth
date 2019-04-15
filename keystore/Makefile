@@ -1,7 +1,7 @@
 PASSWORD=munchausen_by_proxy
 KEYSTORE=keystore.jks
-HOSTNAME=localhost
-CLIENTNAME=client
+HOSTNAME=spinnaker
+CLIENTNAME=jenkins-job
 
 # CN = Common Name
 # OU = Organization Unit
